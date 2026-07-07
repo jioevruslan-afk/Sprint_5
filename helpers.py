@@ -1,12 +1,14 @@
 from random import randint
 from string import ascii_letters, digits
+from uuid import uuid4
 
 from locators import LoginPageLocators, RegisterPageLocators
 
 
 def generate_email():
     random_number = randint(100, 999)
-    return f"ruslan_hvalii_47_{random_number}@yandex.ru"
+    unique_suffix = uuid4().hex[:8]
+    return f"ruslan_hvalii_47_{random_number}_{unique_suffix}@yandex.ru"
 
 
 def generate_password(length=8):
